@@ -21,8 +21,8 @@ class DataIngestion:
     
     def download_file(self):
         if not os.path.exists(self.config.local_data_file):
-            bucket_name = 'tbdatabucket'
-            object_key = 'TB_Chest_Radiography_Database.zip'
+            bucket_name = 'autisticdatabucket'
+            object_key = 'consolidated.zip'
             self.s3_client.download_file(bucket_name, object_key, self.config.local_data_file)
             logger.info(f"File downloaded from S3 bucket: {self.config.local_data_file}")
         else:
