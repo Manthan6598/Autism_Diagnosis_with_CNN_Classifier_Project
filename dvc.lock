@@ -1,0 +1,46 @@
+schema: '2.0'
+stages:
+  prepare_base_model:
+    cmd: python src/TBcnnClassifier/pipeline/stage_02_prepare_base_model.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 32fbf347e41336b414383d0a8fdc3b71
+      size: 789
+    - path: src/TBcnnClassifier/pipeline/stage_02_prepare_base_model.py
+      hash: md5
+      md5: 919dcf8af4430fb7bc6e05f84871648e
+      size: 1005
+    params:
+      params.yaml:
+        CLASSES: 2
+        IMAGE_SIZE:
+        - 224
+        - 224
+        - 3
+        INCLUDE_TOP: false
+        LEARNING_RATE: 0.01
+        WEIGHTS: imagenet
+    outs:
+    - path: artifacts/prepare_base_model
+      hash: md5
+      md5: 7823b45464f54d9420d169ca24fc3dbe.dir
+      size: 118054560
+      nfiles: 2
+  data_ingestion:
+    cmd: python src/TBcnnClassifier/pipeline/stage_01_data_ingestion.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 32fbf347e41336b414383d0a8fdc3b71
+      size: 789
+    - path: src/TBcnnClassifier/pipeline/stage_01_data_ingestion.py
+      hash: md5
+      md5: 17653b2fc9bce5493482d424662cf877
+      size: 909
+    outs:
+    - path: artifacts/data_ingestion/
+      hash: md5
+      md5: 3605e6172cb9b4294f7233bdb5e7c4ee.dir
+      size: 242137512
+      nfiles: 2927
