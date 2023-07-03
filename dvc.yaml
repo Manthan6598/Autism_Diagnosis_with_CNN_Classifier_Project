@@ -27,8 +27,8 @@ stages:
   training:
     cmd: python src/TBcnnClassifier/pipeline/stage_04_training.py
     deps:
-      - src/cnnClassifier/pipeline/stage_04_training.py
-      - src/cnnClassifier/components/prepare_callbacks.py
+      - src/TBcnnClassifier/pipeline/stage_04_training.py
+      - src/TBcnnClassifier/components/prepare_callbacks.py
       - config/config.yaml
       - artifacts/data_ingestion/
       - artifacts/prepare_base_model
