@@ -22,9 +22,12 @@ class PredictionPipeline:
         result = np.argmax(model.predict(test_image), axis=1)
         print(result)
 
+        #image_file_path = None
+
         if result[0] == 1:
             prediction = 'Not_Autistic'
-            return [{ "image" : prediction}]
+            return [prediction]
         else:
             prediction = 'Autistic'
-            return [{ "image" : prediction}]
+            return [prediction]
+        
