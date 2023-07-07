@@ -23,3 +23,6 @@
 #### 7. Update the pipeline
 #### 8. Update the main.py
 #### 9. Update the dvc.yaml
+
+#### Screenshots:
+![image](https://github.com/Manthan6598/Autism_Diagnosis_with_CNN_Classifier_Project/assets/101986611/1f3e055d-3216-4720-9020-9f24c87a02c1)
